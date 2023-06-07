@@ -1,12 +1,10 @@
-FROM maven:3.8.4-openjdk-17-slim AS builder
-
+FROM maven:3.8.4-openjdk-17-slim as maven_builder
 COPY . /app
 WORKDIR /app
-
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17-slim
-COPY --from=builder /app/target/my-app.jar /app.jar
+COPY --from=maven_builder /app/target/*.jar /app.jar
 
 EXPOSE 8080
 

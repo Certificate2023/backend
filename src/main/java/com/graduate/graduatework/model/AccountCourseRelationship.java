@@ -1,6 +1,7 @@
 package com.graduate.graduatework.model;
 
 import com.graduate.graduatework.model.key.AccountCourseRelationshipKey;
+import net.minidev.json.annotate.JsonIgnore;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
@@ -26,5 +27,6 @@ public class AccountCourseRelationship {
     @Column(name = "created_at", columnDefinition = "timestamp default current_timestamp")
     @NotNull
     @CreatedDate
+    @JsonIgnore
     private Timestamp createdAt;
 }

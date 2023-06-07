@@ -22,6 +22,8 @@ services:
       - spring.datasource.url=jdbc:postgresql://local-db:5432/local-db
       - spring.datasource.username=user
       - spring.datasource.password=password
+      - spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+      - spring.jpa.generate-ddl=true
     depends_on:
       - db
 networks:

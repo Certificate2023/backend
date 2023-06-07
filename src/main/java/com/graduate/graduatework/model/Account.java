@@ -48,11 +48,4 @@ public class Account {
     @ToString.Exclude
     @JsonIgnore
     private List<AccountCourseRelationship> courseRelationships = new ArrayList<>();
-
-    public Account(String email, String password, String firstName, String lastName) {
-        this.email = email;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
 }
